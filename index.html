@@ -7,21 +7,49 @@
     <title>Air Monitoring System</title>
     <!-- Include Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="index.css">
+
 </head>
 <body>
 <article class="bg-cover min-h-screen flex items-center justify-center">
     <div class="text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-black">Air Monitoring System</h1>
-        <div class="mt-6">
-            <a href="your-article-url.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full inline-flex items-center transition duration-300">
-                Get Started
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M9.293 4.293a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L10 7.414V16a1 1 0 11-2 0V7.414L3.293 11.707a1 1 0 11-1.414-1.414l6-6z" clip-rule="evenodd" />
-                </svg>
+        <h1 class="text-6xl md:text-[80px] lg:text-[100px] xl:text-[130px] 2xl:text-[170px] font-bold text-white mb-[120px] tracking-wide" id="airMonTitle">A E R O P U L S E</h1>
+        <div class="mt-1" id="startDiv">
+            <a href="your-article-url.html" id="startBtn" class="bg-[#7B7CAD] hover:bg-[#6A6BAF] w-30 h-30 text-white font-semibold py-2 px-4 rounded-full inline-flex items-center text-center duration-300">
+                <span class="mx-auto">Get Started</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6" id="arrowRight">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                  </svg>                  
             </a>
         </div>
     </div>
 </article>
+
+
+
+<script>
+// Get the target element to observe
+const targetElement = document.getElementById('airMonTitle');
+
+// Create a Resize Observer instance
+const resizeObserver = new ResizeObserver(entries => {
+    for (const entry of entries) {
+        const screenWidth = entry.contentRect.width;
+
+        // Check if the screen width is less than or equal to 640px
+        if (screenWidth <= 640) {
+            // Update the content with line breaks
+            targetElement.innerHTML = 'A E R O <br> P U L S E';
+        } else {
+            // Reset the content to the original text
+            targetElement.innerHTML = 'A E R O P U L S E';
+        }
+    }
+});
+
+// Start observing the target element
+resizeObserver.observe(targetElement);
+</script>
 </body>
 </html>

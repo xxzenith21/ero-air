@@ -1,6 +1,33 @@
 /* Add custom CSS for the background image */
+@font-face {
+    font-family: 'Palanquin Dark';
+    src: url('/fonts/PalanquinDark-Bold.ttf') format('truetype');
+}
+
+
+
+
 .bg-cover {
-    background-image: url('/images/sky.jpg'); /* Replace with your image URL */
+    background-image: url('/images/forest.png'); /* Replace with your image URL */
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#airMonTitle{
+    text-shadow: 17px 9px 10px #ff999b;
+}
+
+#startDiv{
+    text-align: center;
+    margin: auto;
+}
+
+#startBtn {
+    font-size: 23px;
+    margin-bottom: 150px;
+    text-align: center;
+} 
+
+#arrowRight{
+    width: 40px;
 }
