@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="index.css">
 
 </head>
+
 <body>
-<article class="bg-cover min-h-screen flex items-center justify-center">
+<section class="bg-cover min-h-screen flex items-center justify-center" id="landingPage">
     <div class="text-center">
         <h1 class="text-6xl md:text-[80px] lg:text-[100px] xl:text-[130px] 2xl:text-[170px] font-bold text-white mb-[120px] tracking-wide" id="airMonTitle">A E R O P U L S E</h1>
         <div class="mt-1" id="startDiv">
-            <a href="your-article-url.html" id="startBtn" class="bg-[#7B7CAD] hover:bg-[#6A6BAF] w-30 h-30 text-white font-semibold py-2 px-4 rounded-full inline-flex items-center text-center duration-300">
+            <a href="#mainTool" id="startBtn" class="bg-[#7B7CAD] hover:bg-[#6A6BAF] w-30 h-30 text-white font-semibold py-2 px-4 rounded-full inline-flex items-center text-center duration-300">
                 <span class="mx-auto">Get Started</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6" id="arrowRight">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -24,7 +25,64 @@
             </a>
         </div>
     </div>
-</article>
+</section>
+
+
+
+<section class="bg-cover min-h-screen flex items-center justify-center" id="mainTool" style="display: none;">
+    <div class="flex justify-center grid grid-rows-3 grid-flow-col">
+        <div id="rowOne" class="h-64 grid grid-cols-2 lg:grid-cols-4 items-center gap-[150px] pl-10 pr-10 mt-5">  
+            <div class="w-64 h-64 bg-[#ffd8cc]" id="senCard1">
+                <div class="sensor1 " id="sensorCard">
+                    <div class="sensor1Body">
+                        <div class="sensor1Fill"></div>
+                        <div class="sensor1Cover">50%</div>
+                    </div>
+                    <h1  style="color: #253f4b;">Sensor 1</h1>
+                </div>
+            </div>
+
+            <div class="w-64 h-64 bg-[#ffd8cc]" id="senCard2">
+                <div class="sensor2" id="sensorCard">
+                    <div class="sensor2Body">
+                        <div class="sensor2Fill"></div>
+                        <div class="sensor2Cover">50%</div>
+                    </div>
+                    <h1  style="color: #253f4b;">Sensor 2</h1>
+                </div>
+            </div>
+
+            <div class="w-64 h-64 bg-[#ffd8cc]" id="senCard3">
+                <div class="sensor3" id="sensorCard">
+                    <div class="sensor3Body">
+                        <div class="sensor3Fill"></div>
+                        <div class="sensor3Cover">50%</div>
+                    </div>
+                    <h1  style="color: #253f4b;">Sensor 3</h1>
+                </div>
+            </div>
+
+            <div class="w-64 h-64 bg-[#ffd8cc]" id="senCard4">
+                <div class="sensor4" id="sensorCard">
+                    <div class="sensor4Body">
+                        <div class="sensor4Fill"></div>
+                        <div class="sensor4Cover">50%</div>
+                    </div>
+                    <h1  style="color: #253f4b;">Sensor 4</h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="rowTwo" class="col-span-4 items-center ml-10 mr-10 bg-[#ffd8cc] mt-[-40px]">
+            
+        </div>
+
+        <div id="rowThree" class="h-[310px] col-span-4 items-center ml-10 mr-10 mt-5 bg-[#ffd8cc]">
+            
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -50,6 +108,19 @@ const resizeObserver = new ResizeObserver(entries => {
 
 // Start observing the target element
 resizeObserver.observe(targetElement);
+
+// Section Jumping
+const landingPage = document.getElementById('landingPage');
+const mainTool = document.getElementById('mainTool');
+const startButton = document.getElementById('startBtn');
+
+startButton.addEventListener('click', function () {
+    landingPage.style.animation = 'fadeOut 1.5s';
+    setTimeout(function () {
+        landingPage.style.display = 'none';
+        mainTool.style.display = 'block';
+    }, 1000);
+});
 </script>
 </body>
 </html>

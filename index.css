@@ -4,6 +4,49 @@
     src: url('/fonts/PalanquinDark-Bold.ttf') format('truetype');
 }
 
+@keyframes slideIn{
+    from {
+        opacity: 0;
+        transform: translateX(5000px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp{
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+    }
+}
 
 
 
@@ -12,6 +55,9 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
+/* Landing Page */
 
 #airMonTitle{
     text-shadow: 17px 9px 10px #ff999b;
@@ -30,4 +76,22 @@
 
 #arrowRight{
     width: 40px;
+}
+
+#mainTool{
+    animation: fadeIn 1s;
+}
+
+
+
+/* Sensor cards */
+
+#senCard1, #senCard2, #senCard3, #senCard4{
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #a8a8a8;
+}
+
+#rowTwo, #rowThree{
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #a8a8a8;
 }
